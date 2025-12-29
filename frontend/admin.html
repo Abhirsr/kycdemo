@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-white">
+
+    <div class="position-fixed top-0 end-0 p-3 z-3" id="language-switcher-placeholder"></div>
+
+    <div id="navbar-placeholder"></div>
+
+    <div class="container mt-5 pt-5">
+        <div class="card card-glass">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3 data-i18n="admin_dashboard">Admin Dashboard</h3>
+                <div>
+                    <button class="btn btn-secondary btn-sm me-2" onclick="loadUsers()">Refresh Data</button>
+                    <button class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#bulkAddModal"
+                        data-i18n="bulk_add_users">Bulk Add Users</button>
+                    <span class="badge bg-primary" data-i18n="registered_users">Registered Users</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="alertMessage" class="alert d-none"></div>
+
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover align-middle" style="background: transparent;">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th data-i18n="username">Username</th>
+                                <th data-i18n="full_name">Full Name</th>
+                                <th data-i18n="pan_verified">PAN Verified</th>
+                                <th data-i18n="actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- Users will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="helpModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Admin Help - JSON Syntax</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Bulk Add Users (JSON Array)</h6>
+                    <p class="small text-secondary">Use this format in the Bulk Add text area:</p>
+                    <pre class="bg-black p-2 border border-secondary rounded text-success small">
+[
+  {
+    "username": "user1",
+    "password": "password123",
+    "fullName": "User One",
+    "role": "ROLE_USER" (optional)
+  },
+  {
+    "username": "admin1",
+    "password": "securepass",
+    "role": "ROLE_ADMIN"
+  }
+]
+                    </pre>
+                    <p class="small text-secondary mb-0">Note: Duplicate usernames will be skipped.</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="bulkAddModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Bulk Add Users</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-secondary">Paste JSON array of users:</p>
+                    <textarea id="bulkJson" class="form-control bg-black text-white border-secondary" rows="10"
+                        placeholder='[{"username": "user1", "password": "123"}, ...]'></textarea>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitBulkUsers()">Add Users</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

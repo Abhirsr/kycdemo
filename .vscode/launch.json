@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Spring Boot-KycdemoApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/backend",
+            "mainClass": "com.ravindra.kycdemo.KycdemoApplication",
+            "projectName": "kycdemo"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.ravindra:kycdemo >------------------------
+[INFO] Building kycdemo 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ kycdemo ---
+[INFO] Deleting C:\Users\abhin\Downloads\kycdemo\kycdemo\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kycdemo ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 10 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ kycdemo ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 20 source files with javac [debug parameters release 21] to target\classes
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by lombok.permit.Permit
+WARNING: Please consider reporting this to the maintainers of class lombok.permit.Permit
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] /C:/Users/abhin/Downloads/kycdemo/kycdemo/src/main/java/com/ravindra/kycdemo/service/AuthService.java: C:\Users\abhin\Downloads\kycdemo\kycdemo\src\main\java\com\ravindra\kycdemo\service\AuthService.java uses or overrides a deprecated API.
+[INFO] /C:/Users/abhin/Downloads/kycdemo/kycdemo/src/main/java/com/ravindra/kycdemo/service/AuthService.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/Users/abhin/Downloads/kycdemo/kycdemo/src/main/java/com/ravindra/kycdemo/service/PanService.java: C:\Users\abhin\Downloads\kycdemo\kycdemo\src\main\java\com\ravindra\kycdemo\service\PanService.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/abhin/Downloads/kycdemo/kycdemo/src/main/java/com/ravindra/kycdemo/service/PanService.java: Recompile with -Xlint:unchecked for details.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.844 s
+[INFO] Finished at: 2025-12-26T12:52:35+05:30
+[INFO] ------------------------------------------------------------------------
